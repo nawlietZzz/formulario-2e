@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulário Místico</title>
+
+    <style>
+        /* =========================
+           VARIÁVEIS DE CORES
+        ========================== */
+        :root {
+            --cor-principal: #6a0dad;
+            --cor-secundaria: #9c27b0;
+            --cor-destaque: #d8b4fe;
+
+            --cor-fundo: #f5efff;
+            --cor-card: #ffffff;
+
+            --cor-texto: #2d163b;
+            --cor-texto-claro: #ffffff;
+
+            --cor-borda: #c4a7d7;
+
+            --sombra: 0 4px 15px rgba(80, 20, 120, 0.15);
+        }
+
+        /* =========================
+           CONFIGURAÇÃO GERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           MENU / NAV
+        ========================== */
+
+        nav {
+            background-color: var(--cor-secundaria);
+
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--cor-texto-claro);
+
+            text-decoration: none;
+
+            margin: 0 15px;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* =========================
+           CONTEÚDO PRINCIPAL
+        ========================== */
+
+        main {
+            max-width: 900px;
+
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .introducao {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           FORMULÁRIO
+        ========================== */
+
+        form {
+            background-color: var(--cor-card);
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: var(--sombra);
+        }
+
+        fieldset {
+            border: 2px solid var(--cor-destaque);
+
+            border-radius: 10px;
+
+            margin-bottom: 25px;
+
+            padding: 20px;
+        }
+
+        legend {
+            color: var(--cor-principal);
+
+            font-weight: bold;
+
+            padding: 0 10px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 10px;
+
+            border: 1px solid var(--cor-borda);
+
+            border-radius: 6px;
+
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--cor-secundaria);
+        }
+
+        /* Radio e Checkbox */
+
+        .opcoes label {
+            display: inline-block;
+
+            margin-right: 20px;
+
+            font-weight: normal;
+        }
+
+        .opcoes input {
+            width: auto;
+        }
+
+        /* Range */
+
+        input[type="range"] {
+            cursor: pointer;
+        }
+
+        /* Color */
+
+        input[type="color"] {
+            width: 80px;
+            height: 45px;
+
+            padding: 2px;
+        }
+
+        /* Botões */
+
+        .botoes {
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        .botoes input {
+            width: auto;
+
+            cursor: pointer;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: var(--cor-principal);
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #dddddd;
+            color: var(--cor-texto);
+        }
+
+        input[type="button"] {
+            background-color: var(--cor-secundaria);
+            color: white;
+        }
+
+        .botoes input:hover {
+            opacity: 0.8;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: var(--cor-principal);
+
+            color: var(--cor-texto-claro);
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header id="inicio">
+        <h1>🔮 Formulário Místico</h1>
+
+        <p>Exemplo dos principais campos de formulário do HTML</p>
+    </header>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav>
+        <a href="#inicio">Início</a>
+
+        <a href="#formulario">Formulário</a>
+
+        <a href="#contato">Contato</a>
+    </nav>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <section class="introducao">
+            <h2>Conhecendo os formulários HTML</h2>
+
+            <p>
+                Nesta página podemos testar diferentes tipos de
+                campos utilizados em formulários HTML.
+            </p>
+        </section>
+
+
+        <section id="formulario">
+
+            <form>
+
+                <!-- =====================
+                     DADOS PESSOAIS
+                ====================== -->
+
+                <fieldset>
+
+                    <legend>Dados pessoais</legend>
+
+
+                    <!-- TEXT -->
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                        >
+
+                    </div>
+
+
+                    <!-- NUMBER -->
+
+                    <div class="campo">
+
+                        <label for="idade">
+                            Idade:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="idade"
+                            name="idade"
+                            min="0"
+                            max="120"
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail:
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemplo@email.com"
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="campo">
+
+                        <label for="senha">
+                            Senha:
+                        </label>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                        >
+
+                    </div>
+
+
+                    <!-- TEL -->
+
+                    <div class="campo">
+
+                        <label for="telefone">
+                            Telefone:
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(00) 00000-0000"
+                        >
+
+                    </div>
+
+
+                    <!-- URL -->
+
+                    <div class="campo">
+
+                        <label for="site">
+                            Site pessoal:
+                        </label>
+
+                        <input
+                            type="url"
+                            id="site"
+                            name="site"
+                            placeholder="https://meusite.com"
+                        >
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================
+                     DATA E HORÁRIO
+                ====================== -->
+
+                <fieldset>
+
+                    <legend>Data e horário</legend>
+
+
+                    <!-- DATE -->
+
+                    <div class="campo">
+
+                        <label for="data">
+                            Data:
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                        >
+
+                    </div>
+
+
+                    <!-- TIME -->
+
+                    <div class="campo">
+
+                        <label for="horario">
+                            Horário:
+                        </label>
+
+                        <input
+                            type="time"
+                            id="horario"
+                            name="horario"
+                        >
+
+                    </div>
+
+
+                    <!-- DATETIME LOCAL -->
+
+                    <div class="campo">
+
+                        <label for="dataHorario">
+                            Data e horário:
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="dataHorario"
+                            name="dataHorario"
+                        >
+
+                    </div>
+
+
+                    <!-- MONTH -->
+
+                    <div class="campo">
+
+                        <label for="mes">
+                            Mês:
+                        </label>
+
+                        <input
+                            type="month"
+                            id="mes"
+                            name="mes"
+                        >
+
+                    </div>
+
+
+                    <!-- WEEK -->
+
+                    <div class="campo">
+
+                        <label for="semana">
+                            Semana:
+                        </label>
+
+                        <input
+                            type="week"
+                            id="semana"
+                            name="semana"
+                        >
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================
+                     ESCOLHAS
+                ====================== -->
+
+                <fieldset>
+
+                    <legend>Escolhas</legend>
+
+
+                    <!-- RADIO -->
+
+                    <div class="campo">
+
+                        <label>
+                            Turno:
+                        </label>
+
+                        <div class="opcoes">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="manha"
+                                >
+
+                                Manhã
+                            </label>
+
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="tarde"
+                                >
+
+                                Tarde
+                            </label>
+
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="noite"
+                                >
+
+                                Noite
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CHECKBOX -->
+
+                    <div class="campo">
+
+                        <label>
+                            Tecnologias que você conhece:
+                        </label>
+
+                        <div class="opcoes">
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="html"
+                                >
+
+                                HTML
+                            </label>
+
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="css"
+                                >
+
+                                CSS
+                            </label>
+
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="javascript"
+                                >
+
+                                JavaScript
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SELECT -->
+
+                    <div class="campo">
+
+                        <label for="curso">
+                            Escolha um curso:
+                        </label>
+
+                        <select
+                            id="curso"
+                            name="curso"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="ds">
+                                Desenvolvimento de Sistemas
+                            </option>
+
+                            <option value="administracao">
+                                Administração
+                            </option>
+
+                            <option value="informatica">
+                                Informática
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================
+                     OUTROS CAMPOS
+                ====================== -->
+
+                <fieldset>
+
+                    <legend>Outros campos</legend>
+
+
+                    <!-- SEARCH -->
+
+                    <div class="campo">
+
+                        <label for="pesquisa">
+                            Campo de pesquisa:
+                        </label>
+
+                        <input
+                            type="search"
+                            id="pesquisa"
+                            name="pesquisa"
+                            placeholder="Pesquisar..."
+                        >
+
+                    </div>
+
+
+                    <!-- FILE -->
+
+                    <div class="campo">
+
+                        <label for="arquivo">
+                            Selecione um arquivo:
+                        </label>
+
+                        <input
+                            type="file"
+                            id="arquivo"
+                            name="arquivo"
+                        >
+
+                    </div>
+
+
+                    <!-- COLOR -->
+
+                    <div class="campo">
+
+                        <label for="cor">
+                            Escolha uma cor:
+                        </label>
+
+                        <input
+                            type="color"
+                            id="cor"
+                            name="cor"
+                            value="#6a0dad"
+                        >
+
+                    </div>
+
+
+                    <!-- RANGE -->
+
+                    <div class="campo">
+
+                        <label for="nivel">
+                            Nível de satisfação:
+                        </label>
+
+                        <input
+                            type="range"
+                            id="nivel"
+                            name="nivel"
+                            min="0"
+                            max="10"
+                            value="5"
+                        >
+
+                    </div>
+
+
+                    <!-- TEXTAREA -->
+
+                    <div class="campo">
+
+                        <label for="mensagem">
+                            Mensagem:
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="5"
+                            placeholder="Digite uma mensagem..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- HIDDEN -->
+
+                    <input
+                        type="hidden"
+                        name="codigo"
+                        value="FORM001"
+                    >
+
+                </fieldset>
+
+
+                <!-- =====================
+                     TERMOS
+                ====================== -->
+
+                <fieldset>
+
+                    <legend>Confirmação</legend>
+
+                    <div class="opcoes">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="termos"
+                                required
+                            >
+
+                            Aceito os termos de uso.
+
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================
+                     BOTÕES
+                ====================== -->
+
+                <div class="botoes">
+
+                    <!-- SUBMIT -->
+
+                    <input
+                        type="submit"
+                        value="Enviar"
+                    >
+
+
+                    <!-- RESET -->
+
+                    <input
+                        type="reset"
+                        value="Limpar"
+                    >
+
+
+                    <!-- BUTTON -->
+
+                    <input
+                        type="button"
+                        value="Clique aqui"
+                        onclick="mostrarMensagem()"
+                    >
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer id="contato">
+
+        <p>
+            Exemplo de formulário HTML
+        </p>
+
+        <p>
+            Desenvolvido para fins educacionais 🔮
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function mostrarMensagem() {
+
+            alert("Você clicou no input do tipo button!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
